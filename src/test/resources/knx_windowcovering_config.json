@@ -1,0 +1,25 @@
+{
+  "knxd_ip" : "127.0.0.1",
+  "knxd_port" : 6720,
+  "AllowWebserver" : true,
+  "AllowKillHomebridge" : false,
+  "Devices" : [ {
+    "DeviceName" : "Schlafzimmer",
+    "Services" : [ {
+      "@type" : "WindowCovering",
+      "ServiceType" : "WindowCovering",
+      "Handler" : "HagerWindowCoveringTilt",
+      "ServiceName" : "Rollade Schlafzimmer rechts",
+      "Characteristics" : [ {
+        "Type" : "TargetPosition",
+        "Set" : [ "2/1/1" ],
+        "DPT" : "DPT1"
+      }, {
+        "Type" : "CurrentPosition",
+        "Listen" : [ "2/3/1" ]
+      }, {
+        "Type" : "PositionState"
+      } ]
+    } ]
+  } ]
+}

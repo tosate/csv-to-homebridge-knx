@@ -1,0 +1,57 @@
+{
+  "knxd_ip" : "127.0.0.1",
+  "knxd_port" : 6720,
+  "AllowWebserver" : true,
+  "AllowKillHomebridge" : false,
+  "Devices" : [ {
+    "DeviceName": "Schranke",
+    "Services": [
+        {
+        	"@type" : "GarageDoorOpener",
+            "ServiceType": "GarageDoorOpener",
+            "Handler": "GarageDoorOpenerAdvanced",
+            "ServiceName": "Schranke",
+            "Characteristics": [
+                {
+                    "Type": "CurrentDoorState"
+                },
+                {
+                    "Type": "TargetDoorState"
+                }
+            ],
+            "KNXObjects": [
+                {
+                    "Type": "KNXPulseUp",
+                    "Set": "2/3/0",
+                    "Listen": "2/3/0",
+                    "DPT": "DPT1"
+                },
+                {
+                    "Type": "KNXPulseDown",
+                    "Set": "2/3/0",
+                    "Listen": "2/3/0",
+                    "DPT": "DPT1"
+                },
+                {
+                    "Type": "KNXDoorOpen",
+                    "Listen": "2/3/2",
+                    "DPT": "DPT1"
+                }
+            ],
+            "KNXReadRequests": [
+                "2/3/2",
+                "2/3/3"
+            ],
+            "LocalConstants": {
+                "simulateDoorContactMode": "internal",
+                "doorContactPresent": "open",
+                "staircaseFunc": false,
+                "separatePulseUpDown": true,
+                "sensorOn" : 1,
+                "pulseLength": 500, 
+                "doorRunTime": 18500
+            }
+        }
+    ]
+} ]
+}

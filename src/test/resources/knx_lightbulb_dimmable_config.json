@@ -1,0 +1,24 @@
+{
+  "knxd_ip" : "127.0.0.1",
+  "knxd_port" : 6720,
+  "AllowWebserver" : true,
+  "AllowKillHomebridge" : false,
+  "Devices" : [ {
+    "DeviceName" : "Wohnzimmer",
+    "Services" : [ {
+      "@type" : "Lightbulb",
+      "ServiceType" : "Lightbulb",
+      "ServiceName" : "Licht Wohnzimmer",
+      "Characteristics" : [ {
+        "Type" : "On",
+        "Set" : [ "1/1/1" ],
+        "Listen" : [ "1/4/1" ],
+        "DPT" : "DPT1"
+      }, {
+      	"Type" : "Brightness",
+      	"Set" : [ "1/3/1" ],
+      	"Listen" : [ "1/5/1" ]
+      } ]
+    } ]
+  } ]
+}

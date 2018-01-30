@@ -1,0 +1,19 @@
+{
+  "knxd_ip" : "127.0.0.1",
+  "knxd_port" : 6720,
+  "AllowWebserver" : true,
+  "AllowKillHomebridge" : false,
+  "Devices" : [ {
+    "DeviceName" : "Küche",
+    "Services" : [ {
+      "@type" : "ContactSensor",
+      "ServiceType" : "ContactSensor",
+      "ServiceName" : "Fenster",
+      "Characteristics" : [ {
+        "Type" : "ContactSensorState",
+        "Listen" : [ "3/5/1" ],
+        "DPT" : "DPT1"
+      } ]
+    } ]
+  } ]
+}

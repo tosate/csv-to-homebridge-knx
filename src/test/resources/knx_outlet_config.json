@@ -1,0 +1,30 @@
+{
+   "knxd_ip":"127.0.0.1",
+   "knxd_port":6720,
+   "AllowWebserver":true,
+   "AllowKillHomebridge":false,
+   "Devices":[
+      {
+         "DeviceName":"Kitchen",
+         "Services":[
+            {
+               "@type":"Outlet",
+               "ServiceType":"Outlet",
+               "ServiceName":"Kitchen Counter Right-side Outlets",
+               "Characteristics":[
+                  {
+                     "Type":"On",
+                     "Set":[
+                        "1/2/3"
+                     ],
+                     "Listen":[
+                        "1/4/3"
+                     ],
+                     "DPT":"DPT1"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
