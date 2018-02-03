@@ -4,12 +4,12 @@
   "AllowWebserver" : true,
   "AllowKillHomebridge" : false,
   "Devices" : [ {
-    "DeviceName" : "Schlafzimmer",
+    "DeviceName" : "Wohnzimmer",
     "Services" : [ {
       "@type" : "WindowCovering",
       "ServiceType" : "WindowCovering",
       "Handler": "HagerWindowCoveringTilt",
-      "ServiceName" : "Rollade Schlafzimmer rechts",
+      "ServiceName" : "Jalousie Wohnzimmer",
       "Characteristics" : [ {
         "Type" : "TargetPosition",
         "Set" : [ "2/4/1" ],
@@ -21,6 +21,15 @@
         "DPT" : "DPT5"
       }, {
       	"Type" : "PositionState"
+      }, {
+      	"Type" : "TargetHorizontalTiltAngle",
+      	"Set" : [ "2/6/1" ],
+      	"Listen" : [ "2/6/1" ],
+      	"DPT" : "DPT5"
+      }, {
+      	"Type" : "CurrentHorizontalTiltAngle",
+      	"Listen" : [ "2/5/1" ],
+      	"DPT" : "DPT5"
       } ]
     } ]
   } ]

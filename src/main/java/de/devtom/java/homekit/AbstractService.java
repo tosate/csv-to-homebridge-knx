@@ -58,7 +58,7 @@ public abstract class AbstractService {
 			return false;
 		}
 		final AbstractService other = (AbstractService) obj;
-		if((this.serviceName == null) ? (other.serviceName != null) : !this.serviceName.equals(other.serviceName)) {
+ 		if((this.serviceName == null) ? (other.serviceName != null) : !this.serviceName.equals(other.serviceName)) {
 			return false;
 		}
 		if((this.handler == null) ? (other.handler != null) : !this.handler.equals(other.handler)) {
@@ -80,7 +80,7 @@ public abstract class AbstractService {
 			return false;
 		}
 		
-		return true;
+ 		return true;
 	}
 
 	@JsonProperty("ServiceName")

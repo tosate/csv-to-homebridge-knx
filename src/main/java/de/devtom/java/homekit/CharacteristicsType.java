@@ -8,7 +8,9 @@ public enum CharacteristicsType {
 	POSITIONSTATE("PositionState"),
 	CURRENTDOORSTATE("CurrentDoorState)"),
 	TARGETDOORSTATE("TargetDoorState"),
-	CONTACTSENSORSTATE("ContactSensorState");
+	CONTACTSENSORSTATE("ContactSensorState"),
+	TARGETHORIZONTALTILTANGLE("TargetHorizontalTiltAngle"),
+	CURRENTHORIZONTALTILTANGLE("CurrentHorizontalTiltAngle");
 	
 	private String value;
 	

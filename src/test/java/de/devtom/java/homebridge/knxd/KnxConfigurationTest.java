@@ -8,11 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.devtom.java.App;
+import de.devtom.java.homekit.DeviceFactory;
 import de.devtom.java.homekit.ServiceType;
 
 public class KnxConfigurationTest {
@@ -27,6 +29,7 @@ public class KnxConfigurationTest {
 	private static final String GARGEDOOROPENER_TEST_FILE = "knx_garagedooropener_config.json";
 	private static final String OUTLET_TEST_FILE = "knx_outlet_config.json";
 	private static final String CONTACTSENSOR_TEST_FILE = "knx_contactsensor_config.json";
+	private static final String WINDOWCOVERING_JALOUSIE_TEST_FILE = "knx_windowcovering_jalousie_config.json";
 	
 	private KnxConfiguration knxConfigurationFromJson(String resource) throws IOException {
 		ClassLoader loader = App.class.getClassLoader();
@@ -48,6 +51,11 @@ public class KnxConfigurationTest {
 		knxConfiguration.setAllowKillHomebridge(ALLOW_KILL_HOMEBRIDGE);
 		
 		return knxConfiguration;
+	}
+	
+	@Before
+	public void setUp() {
+		DeviceFactory.getInstance().clearMap();
 	}
 
 	@Test
@@ -94,7 +102,7 @@ public class KnxConfigurationTest {
 	public void testWindowCoveringConfig() throws Exception {
 		String deviceName = "Schlafzimmer";
 		String serviceName = "Rollade Schlafzimmer rechts";
-		String groupAddress1 = "2/1/1";
+		String groupAddress1 = "2/4/1";
 		String groupAddress2 = "2/3/1";
 		KnxConfiguration knxConfiguration = getKnxConfiguration();
 		
@@ -105,6 +113,27 @@ public class KnxConfigurationTest {
 		knxConfiguration.processCsvRecords(records);
 		
 		KnxConfiguration knxConfiguration2 = knxConfigurationFromJson(WINDOWCOVERING_TEST_FILE);
+		
+		assertEquals(knxConfiguration, knxConfiguration2);
+	}
+	
+	@Test
+	public void testWindowCoveringJalousieConfig() throws Exception {
+		String deviceName = "Wohnzimmer";
+		String serviceName = "Jalousie Wohnzimmer";
+		String groupAddress1 = "2/4/1";
+		String groupAddress2 = "2/3/1";
+		String groupAddress3 = "2/6/1";
+		String groupAddress4 = "2/5/1";
+		KnxConfiguration knxConfiguration = getKnxConfiguration();
+		
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.WINDOWCOVERING.getValue(), serviceName, groupAddress1, groupAddress2, groupAddress3, groupAddress4);
+		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
+		records.add(record);
+		
+		knxConfiguration.processCsvRecords(records);
+		
+		KnxConfiguration knxConfiguration2 = knxConfigurationFromJson(WINDOWCOVERING_JALOUSIE_TEST_FILE);
 		
 		assertEquals(knxConfiguration, knxConfiguration2);
 	}

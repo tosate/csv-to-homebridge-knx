@@ -32,4 +32,8 @@ public class DeviceFactory {
 			return device;
 		}
 	}
+	
+	public void clearMap() {
+		this.devicesMap.clear();
+	}
 }
