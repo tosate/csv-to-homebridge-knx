@@ -10,7 +10,10 @@ public enum CharacteristicsType {
 	TARGETDOORSTATE("TargetDoorState"),
 	CONTACTSENSORSTATE("ContactSensorState"),
 	TARGETHORIZONTALTILTANGLE("TargetHorizontalTiltAngle"),
-	CURRENTHORIZONTALTILTANGLE("CurrentHorizontalTiltAngle");
+	CURRENTHORIZONTALTILTANGLE("CurrentHorizontalTiltAngle"),
+	OCCUPANCYDETECTED("OccupancyDetected"),
+	STATUSACTIVE("StatusActive"),
+	OUTLETINUSE("OutletInUse");
 	
 	private String value;
 	

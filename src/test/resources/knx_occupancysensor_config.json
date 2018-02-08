@@ -1,0 +1,27 @@
+{
+   "knxd_ip":"127.0.0.1",
+   "knxd_port":6720,
+   "AllowWebserver":true,
+   "AllowKillHomebridge":false,
+   "Devices":[
+      {
+         "DeviceName":"Hall",
+         "Services":[
+            {
+               "@type":"OccupancySensor",
+               "ServiceType":"OccupancySensor",
+               "ServiceName":"Hall Sensor",
+               "Characteristics":[
+                  {
+                     "Type":"OccupancyDetected",
+                     "Listen":[
+                        "6/4/1"
+                     ],
+                     "DPT":"DPT1"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

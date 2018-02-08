@@ -30,6 +30,8 @@ public class KnxConfigurationTest {
 	private static final String OUTLET_TEST_FILE = "knx_outlet_config.json";
 	private static final String CONTACTSENSOR_TEST_FILE = "knx_contactsensor_config.json";
 	private static final String WINDOWCOVERING_JALOUSIE_TEST_FILE = "knx_windowcovering_jalousie_config.json";
+	private static final String OCCUPANCYSENSOR_TEST_FILE = "knx_occupancysensor_config.json";
+	private static final String SWITCH_TEST_FILE = "knx_switch_config.json";
 	
 	private KnxConfiguration knxConfigurationFromJson(String resource) throws IOException {
 		ClassLoader loader = App.class.getClassLoader();
@@ -193,6 +195,44 @@ public class KnxConfigurationTest {
 		knxConfiguration.processCsvRecords(records);
 		
 		KnxConfiguration knxConfiguration2 = knxConfigurationFromJson(CONTACTSENSOR_TEST_FILE);
+		
+		assertEquals(knxConfiguration, knxConfiguration2);
+	}
+	
+	@Test
+	public void testOccupancySensor() throws Exception {
+		String deviceName = "Hall";
+		String serviceName = "Hall Sensor";
+		String groupAddress1 = "6/4/1";
+		
+		KnxConfiguration knxConfiguration = getKnxConfiguration();
+		
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.OCCUPANCYSENSOR.getValue(), serviceName, groupAddress1, null, null, null);
+		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
+		records.add(record);
+		
+		knxConfiguration.processCsvRecords(records);
+		
+		KnxConfiguration knxConfiguration2 = knxConfigurationFromJson(OCCUPANCYSENSOR_TEST_FILE);
+		
+		assertEquals(knxConfiguration, knxConfiguration2);
+	}
+	
+	@Test
+	public void testSwitch() throws Exception {
+		String deviceName = "Hall";
+		String serviceName = "Switch";
+		String groupAddress1 = "6/3/1";
+		
+		KnxConfiguration knxConfiguration = getKnxConfiguration();
+		
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.SWITCH.getValue(), serviceName, groupAddress1, null, null, null);
+		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
+		records.add(record);
+		
+		knxConfiguration.processCsvRecords(records);
+		
+		KnxConfiguration knxConfiguration2 = knxConfigurationFromJson(SWITCH_TEST_FILE);
 		
 		assertEquals(knxConfiguration, knxConfiguration2);
 	}

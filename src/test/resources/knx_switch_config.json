@@ -5,23 +5,22 @@
    "AllowKillHomebridge":false,
    "Devices":[
       {
-         "DeviceName":"Kitchen",
+         "DeviceName":"Hall",
          "Services":[
             {
-               "@type":"Outlet",
-               "ServiceType":"Outlet",
-               "ServiceName":"Kitchen Counter Right-side Outlets",
+               "@type":"Switch",
+               "ServiceType":"Switch",
+               "ServiceName":"Switch",
                "Characteristics":[
                   {
                      "Type":"On",
                      "Set":[
-                        "1/2/3"
+                        "6/3/1"
+                     ],
+                     "Listen":[
+                        "6/3/1"
                      ],
                      "DPT":"DPT1"
-                  }, {
-                  	"Type": "OutletInUse",
-                  	"Listen":[ "1/4/3" ],
-                  	"DPT" : "DPT1"
                   }
                ]
             }

@@ -19,7 +19,9 @@ import de.devtom.java.homebridge.knxd.KnxCsvRecord;
 	@JsonSubTypes.Type(value = WindowCoveringService.class, name = "WindowCovering"),
 	@JsonSubTypes.Type(value = GarageDoorOpenerService.class, name = "GarageDoorOpener"),
 	@JsonSubTypes.Type(value = OutletService.class, name = "Outlet"),
-	@JsonSubTypes.Type(value = ContactSensorService.class, name = "ContactSensor")
+	@JsonSubTypes.Type(value = ContactSensorService.class, name = "ContactSensor"),
+	@JsonSubTypes.Type(value = OccupancySensorService.class, name = "OccupancySensor"),
+	@JsonSubTypes.Type(value = SwitchService.class, name = "Switch")
 })
 public abstract class AbstractService {
 	public static final String KNX_DPT1 = "DPT1";

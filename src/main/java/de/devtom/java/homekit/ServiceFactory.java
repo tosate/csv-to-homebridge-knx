@@ -71,4 +71,22 @@ public class ServiceFactory {
 		
 		return contactSensorService;
 	}
+
+	public OccupancySensorService getNewOccupancySensorService(KnxCsvRecord record) throws Exception {
+		checkForExistingService(record.getServiceName());
+		
+		OccupancySensorService occupancySensorService = new OccupancySensorService(record);
+		servicesMap.put(occupancySensorService.getServiceName(), occupancySensorService);
+		
+		return occupancySensorService;
+	}
+
+	public SwitchService getNewSwitchService(KnxCsvRecord record) throws Exception {
+		checkForExistingService(record.getServiceName());
+		
+		SwitchService switchService = new SwitchService(record);
+		servicesMap.put(switchService.getServiceName(), switchService);
+		
+		return switchService;
+	}
 }

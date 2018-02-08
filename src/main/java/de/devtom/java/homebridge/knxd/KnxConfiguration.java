@@ -19,9 +19,11 @@ import de.devtom.java.homekit.Device;
 import de.devtom.java.homekit.DeviceFactory;
 import de.devtom.java.homekit.GarageDoorOpenerService;
 import de.devtom.java.homekit.LightbulbService;
+import de.devtom.java.homekit.OccupancySensorService;
 import de.devtom.java.homekit.OutletService;
 import de.devtom.java.homekit.ServiceFactory;
 import de.devtom.java.homekit.ServiceType;
+import de.devtom.java.homekit.SwitchService;
 import de.devtom.java.homekit.WindowCoveringService;
 
 public class KnxConfiguration {	
@@ -65,6 +67,18 @@ public class KnxConfiguration {
 				ContactSensorService contactSensorService = ServiceFactory.getInstance().getNewContactSensorService(record);
 				
 				device.getServices().add(contactSensorService);
+			}
+			
+			if(record.getServiceType().equals(ServiceType.OCCUPANCYSENSOR.getValue())) {
+				OccupancySensorService occupancySensorService = ServiceFactory.getInstance().getNewOccupancySensorService(record);
+				
+				device.getServices().add(occupancySensorService);
+			}
+			
+			if(record.getServiceType().equals(ServiceType.SWITCH.getValue())) {
+				SwitchService switchService = ServiceFactory.getInstance().getNewSwitchService(record);
+				
+				device.getServices().add(switchService);
 			}
 		}
 	}

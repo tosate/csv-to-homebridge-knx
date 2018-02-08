@@ -16,13 +16,19 @@ public class OutletService extends AbstractService {
 
 	@Override
 	protected void initialize(KnxCsvRecord record) {
-		Characteristics characteristics = new Characteristics();
-		characteristics.setType(CharacteristicsType.ON);
-		characteristics.getListen().add(record.getGroupAddress2());
-		characteristics.getSet().add(record.getGroupAddress1());
-		characteristics.setDpt(OutletService.KNX_DPT1);
+		Characteristics onCharacteristics = new Characteristics();
+		onCharacteristics.setType(CharacteristicsType.ON);
+		onCharacteristics.getSet().add(record.getGroupAddress1());
+		onCharacteristics.setDpt(OutletService.KNX_DPT1);
 
-		this.getCharacteristics().add(characteristics);
+		this.getCharacteristics().add(onCharacteristics);
+		
+		Characteristics outletInUseCharacteristics = new Characteristics();
+		outletInUseCharacteristics.setType(CharacteristicsType.OUTLETINUSE);
+		outletInUseCharacteristics.getListen().add(record.getGroupAddress2());
+		outletInUseCharacteristics.setDpt(OutletService.KNX_DPT1);
+		
+		this.getCharacteristics().add(outletInUseCharacteristics);
 	}
 
 }

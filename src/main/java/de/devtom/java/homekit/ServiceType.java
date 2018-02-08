@@ -5,7 +5,9 @@ public enum ServiceType {
 	WINDOWCOVERING("WindowCovering"),
 	GARAGEDOOROPENER("GarageDoorOpener"),
 	OUTLET("Outlet"),
-	CONTACTSENSOR("ContactSensor");
+	CONTACTSENSOR("ContactSensor"),
+	OCCUPANCYSENSOR("OccupancySensor"),
+	SWITCH("Switch");
 
 	private String value;
 	
