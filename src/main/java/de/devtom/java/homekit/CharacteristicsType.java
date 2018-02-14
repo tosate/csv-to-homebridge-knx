@@ -13,7 +13,12 @@ public enum CharacteristicsType {
 	CURRENTHORIZONTALTILTANGLE("CurrentHorizontalTiltAngle"),
 	OCCUPANCYDETECTED("OccupancyDetected"),
 	STATUSACTIVE("StatusActive"),
-	OUTLETINUSE("OutletInUse");
+	OUTLETINUSE("OutletInUse"),
+	CURRENTHEATINGCOOLINGSTATE("CurrentHeatingCoolingState"),
+	TARGETHEATINGCOOLINGSTATE("TargetHeatingCoolingState"),
+	CURRENTTEMPERATURE("CurrentTemperature"),
+	TARGETTEMPERATURE("TargetTemperature"),
+	TEMPERATUREDISPLAYUNITS("TemperatureDisplayUnits");
 	
 	private String value;
 	

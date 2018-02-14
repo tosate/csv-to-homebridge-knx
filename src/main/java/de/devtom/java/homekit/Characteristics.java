@@ -13,6 +13,7 @@ public class Characteristics {
 	private List<String> listen;
 	private String dpt;
 	private Boolean reverse;
+	private Integer temperatureDisplayUnits;
 
 	@JsonProperty("Reverse")
 	@JsonInclude(Include.NON_NULL)
@@ -98,7 +99,25 @@ public class Characteristics {
 		if((this.dpt == null) ? (other.dpt != null) : !this.dpt.equals(other.dpt)) {
 			return false;
 		}
+		if((this.temperatureDisplayUnits == null) ? (other.temperatureDisplayUnits != null) : !this.temperatureDisplayUnits.equals(other.temperatureDisplayUnits)) {
+			return false;
+		}
 		
 		return true;
-	}	
+	}
+
+	@JsonProperty("TemperatureDisplayUnits")
+	@JsonInclude(Include.NON_NULL)
+	public Integer getTemperatureDisplayUnits() {
+		if(temperatureDisplayUnits != null) {
+			return temperatureDisplayUnits;
+		} else {
+			return null;
+		}
+	}
+
+	@JsonProperty("TemperatureDisplayUnits")
+	public void setTemperatureDisplayUnits(Integer temperatureDisplayUnits) {
+		this.temperatureDisplayUnits = temperatureDisplayUnits;
+	}
 }

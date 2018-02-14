@@ -1,8 +1,9 @@
-Küche,ContactSensor,Fenster,3/5/1,,,
-Schranke,GarageDoorOpener,Schranke,2/3/0,2/3/2,2/3/3,
-Wohnzimmer,Lightbulb,Licht Wohnzimmer,1/1/1,1/4/1,1/3/1,1/5/1
-Küche,Outlet,Steckdose,1/2/3,1/4/3,,
-Schlafzimmer,WindowCovering,Rollade Schlafzimmer rechts,2/4/1,2/3/1,,
-Wohnzimmer,WindowCovering,Jalousie Wohnzimmer,2/4/1,2/3/1,2/6/1,2/5/1
-Flur,OccupancySensor,Präsenzmelder Flur,6/4/1,,,
-Flur,Switch,Schalter FLur,6/3/1,,,
+Küche,ContactSensor,Fenster,3/5/1,,,,
+Schranke,GarageDoorOpener,Schranke,2/3/0,2/3/2,2/3/3,,
+Wohnzimmer,Lightbulb,Licht Wohnzimmer,1/1/1,1/4/1,1/3/1,1/5/1,
+Küche,Outlet,Steckdose,1/2/3,1/4/3,,,
+Schlafzimmer,WindowCovering,Rollade Schlafzimmer rechts,2/4/1,2/3/1,,,
+Wohnzimmer,WindowCovering,Jalousie Wohnzimmer,2/4/1,2/3/1,2/6/1,2/5/1,
+Flur,OccupancySensor,Präsenzmelder Flur,6/4/1,,,,
+Flur,Switch,Schalter FLur,6/3/1,,,,
+Office,Thermostate,Office Thermostate,3/1/1,3/2/1,3/3/1,3/4/1,3/5/1

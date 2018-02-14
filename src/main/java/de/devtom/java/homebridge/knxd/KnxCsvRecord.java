@@ -10,6 +10,7 @@ public class KnxCsvRecord {
 	private String groupAddress2;
 	private String groupAddress3;
 	private String groupAddress4;
+	private String groupAddress5;
 	
 	public KnxCsvRecord(CSVRecord csvRecord) {
 		this.deviceName = csvRecord.get(CsvHeaders.DEVICE_NAME);
@@ -19,9 +20,26 @@ public class KnxCsvRecord {
 		this.groupAddress2 = csvRecord.get(CsvHeaders.GROUP_ADDRESS2);
 		this.groupAddress3 = csvRecord.get(CsvHeaders.GROUP_ADDRESS3);
 		this.groupAddress4 = csvRecord.get(CsvHeaders.GROUP_ADDRESS4);
+		this.groupAddress5 = csvRecord.get(CsvHeaders.GROUP_ADDRESS5);
+	}
+	
+	public KnxCsvRecord(String deviceName, String serviceType, String serviceName, String groupAddress1) {
+		this(deviceName, serviceType, serviceName, groupAddress1, null, null, null, null);
+	}
+	
+	public KnxCsvRecord(String deviceName, String serviceType, String serviceName, String groupAddress1, String groupAddress2) {
+		this(deviceName, serviceType, serviceName, groupAddress1, groupAddress2, null, null, null);
+	}
+	
+	public KnxCsvRecord(String deviceName, String serviceType, String serviceName, String groupAddress1, String groupAddress2, String groupAddress3) {
+		this(deviceName, serviceType, serviceName, groupAddress1, groupAddress2, groupAddress3, null, null);
 	}
 	
 	public KnxCsvRecord(String deviceName, String serviceType, String serviceName, String groupAddress1, String groupAddress2, String groupAddress3, String groupAddress4) {
+		this(deviceName, serviceType, serviceName, groupAddress1, groupAddress2, groupAddress3, groupAddress4, null);
+	}
+	
+	public KnxCsvRecord(String deviceName, String serviceType, String serviceName, String groupAddress1, String groupAddress2, String groupAddress3, String groupAddress4, String groupAddress5) {
 		this.deviceName = deviceName;
 		this.serviceType = serviceType;
 		this.serviceName = serviceName;
@@ -29,6 +47,7 @@ public class KnxCsvRecord {
 		this.groupAddress2 = groupAddress2;
 		this.groupAddress3 = groupAddress3;
 		this.groupAddress4 = groupAddress4;
+		this.groupAddress5 = groupAddress5;
 	}
 
 	public String getDeviceName() {
@@ -57,5 +76,9 @@ public class KnxCsvRecord {
 
 	public String getGroupAddress4() {
 		return groupAddress4;
+	}
+
+	public String getGroupAddress5() {
+		return groupAddress5;
 	}
 }

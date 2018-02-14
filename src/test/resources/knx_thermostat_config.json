@@ -1,0 +1,45 @@
+{
+	"knxd_ip": "127.0.0.1",
+	"knxd_port": 6720,
+	"AllowWebserver": true,
+	"AllowKillHomebridge": false,
+	"Devices": [
+		{
+			"DeviceName": "Office",
+			"Services": [
+				{
+					"@type": "Thermostat",
+					"ServiceType": "Thermostat",
+					"ServiceName": "Office Thermostat",
+					"Characteristics": [
+						{
+							"Type": "CurrentHeatingCoolingState",
+							"Listen" : [ "3/3/12" ]
+						},
+						{
+							"Type" : "TargetHeatingCoolingState",
+							"Listen" : [ "1/2/3" ],
+							"DPT" : "DPT5"
+						},
+						{
+							"Type": "CurrentTemperature",
+							"Listen" : [ "3/1/2" ],
+							"DPT" : "DPT9"
+						},
+						{
+							"Type": "TargetTemperature",
+							"Listen" : [ "3/2/2" ],
+							"Set" : [ "3/6/2" ],
+							"DPT" : "DPT9"
+						},
+						{
+							"Type": "TemperatureDisplayUnits",
+							"TemperatureDisplayUnits" : "0"
+						}
+					]
+				}
+			]
+		}
+	]
+}
+                 

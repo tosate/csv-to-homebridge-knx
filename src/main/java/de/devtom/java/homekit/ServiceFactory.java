@@ -89,4 +89,14 @@ public class ServiceFactory {
 		
 		return switchService;
 	}
+
+	public ThermostatService getNewThermostatService(KnxCsvRecord record) throws Exception {
+		checkForExistingService(record.getServiceName());
+		
+		ThermostatService thermostatService = new ThermostatService(record);
+		
+		servicesMap.put(thermostatService.getServiceName(), thermostatService);
+		
+		return thermostatService;
+	}
 }

@@ -21,11 +21,13 @@ import de.devtom.java.homebridge.knxd.KnxCsvRecord;
 	@JsonSubTypes.Type(value = OutletService.class, name = "Outlet"),
 	@JsonSubTypes.Type(value = ContactSensorService.class, name = "ContactSensor"),
 	@JsonSubTypes.Type(value = OccupancySensorService.class, name = "OccupancySensor"),
-	@JsonSubTypes.Type(value = SwitchService.class, name = "Switch")
+	@JsonSubTypes.Type(value = SwitchService.class, name = "Switch"),
+	@JsonSubTypes.Type(value = ThermostatService.class, name="Thermostat")
 })
 public abstract class AbstractService {
 	public static final String KNX_DPT1 = "DPT1";
 	public static final String KNX_DPT5 = "DPT5";
+	public static final String KNX_DPT9 = "DPT9";
 	protected ServiceType serviceType;
 	protected String serviceName;
 	protected List<Characteristics> characteristics;

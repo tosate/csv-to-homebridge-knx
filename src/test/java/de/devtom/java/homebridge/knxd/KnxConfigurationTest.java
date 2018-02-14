@@ -32,6 +32,7 @@ public class KnxConfigurationTest {
 	private static final String WINDOWCOVERING_JALOUSIE_TEST_FILE = "knx_windowcovering_jalousie_config.json";
 	private static final String OCCUPANCYSENSOR_TEST_FILE = "knx_occupancysensor_config.json";
 	private static final String SWITCH_TEST_FILE = "knx_switch_config.json";
+	private static final String THERMOSTAT_TEST_FILE = "knx_thermostat_config.json";
 	
 	private KnxConfiguration knxConfigurationFromJson(String resource) throws IOException {
 		ClassLoader loader = App.class.getClassLoader();
@@ -68,7 +69,7 @@ public class KnxConfigurationTest {
 		String groupAddress2 = "1/4/1";
 		KnxConfiguration knxConfiguration = getKnxConfiguration();
 		
-		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.LIGHTBULB.getValue(), serviceName, groupAddress1, groupAddress2, null, null);
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.LIGHTBULB.getValue(), serviceName, groupAddress1, groupAddress2);
 		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
 		records.add(record);
 		
@@ -108,7 +109,7 @@ public class KnxConfigurationTest {
 		String groupAddress2 = "2/3/1";
 		KnxConfiguration knxConfiguration = getKnxConfiguration();
 		
-		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.WINDOWCOVERING.getValue(), serviceName, groupAddress1, groupAddress2, null, null);
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.WINDOWCOVERING.getValue(), serviceName, groupAddress1, groupAddress2);
 		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
 		records.add(record);
 		
@@ -149,7 +150,7 @@ public class KnxConfigurationTest {
 		String groupAddress3 = "2/3/3";
 		KnxConfiguration knxConfiguration = getKnxConfiguration();
 		
-		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.GARAGEDOOROPENER.getValue(), serviceName, groupAddress1, groupAddress2, groupAddress3, null);
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.GARAGEDOOROPENER.getValue(), serviceName, groupAddress1, groupAddress2, groupAddress3);
 		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
 		records.add(record);
 		
@@ -169,7 +170,7 @@ public class KnxConfigurationTest {
 		
 		KnxConfiguration knxConfiguration = getKnxConfiguration();
 		
-		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.OUTLET.getValue(), serviceName, groupAddress1, groupAddress2, null, null);
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.OUTLET.getValue(), serviceName, groupAddress1, groupAddress2);
 		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
 		records.add(record);
 		
@@ -188,7 +189,7 @@ public class KnxConfigurationTest {
 		
 		KnxConfiguration knxConfiguration = getKnxConfiguration();
 		
-		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.CONTACTSENSOR.getValue(), serviceName, groupAddress1, null, null, null);
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.CONTACTSENSOR.getValue(), serviceName, groupAddress1);
 		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
 		records.add(record);
 		
@@ -207,7 +208,7 @@ public class KnxConfigurationTest {
 		
 		KnxConfiguration knxConfiguration = getKnxConfiguration();
 		
-		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.OCCUPANCYSENSOR.getValue(), serviceName, groupAddress1, null, null, null);
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.OCCUPANCYSENSOR.getValue(), serviceName, groupAddress1);
 		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
 		records.add(record);
 		
@@ -226,13 +227,36 @@ public class KnxConfigurationTest {
 		
 		KnxConfiguration knxConfiguration = getKnxConfiguration();
 		
-		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.SWITCH.getValue(), serviceName, groupAddress1, null, null, null);
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.SWITCH.getValue(), serviceName, groupAddress1);
 		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
 		records.add(record);
 		
 		knxConfiguration.processCsvRecords(records);
 		
 		KnxConfiguration knxConfiguration2 = knxConfigurationFromJson(SWITCH_TEST_FILE);
+		
+		assertEquals(knxConfiguration, knxConfiguration2);
+	}
+	
+	@Test
+	public void testThermostat() throws Exception {
+		String deviceName = "Office";
+		String serviceName = "Office Thermostat";
+		String groupAddress1 = "3/1/2";
+		String groupAddress2 = "3/2/2";
+		String groupAddress3 = "3/6/2";
+		String groupAddress4 = "3/3/12";
+		String groupAddress5 = "1/2/3";
+		
+		KnxConfiguration knxConfiguration = getKnxConfiguration();
+		
+		KnxCsvRecord record = new KnxCsvRecord(deviceName, ServiceType.THERMOSTAT.getValue(), serviceName, groupAddress1, groupAddress2, groupAddress3, groupAddress4, groupAddress5);
+		List<KnxCsvRecord> records = new ArrayList<KnxCsvRecord>();
+		records.add(record);
+		
+		knxConfiguration.processCsvRecords(records);
+		
+		KnxConfiguration knxConfiguration2 = knxConfigurationFromJson(THERMOSTAT_TEST_FILE);
 		
 		assertEquals(knxConfiguration, knxConfiguration2);
 	}

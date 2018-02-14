@@ -7,7 +7,8 @@ public enum ServiceType {
 	OUTLET("Outlet"),
 	CONTACTSENSOR("ContactSensor"),
 	OCCUPANCYSENSOR("OccupancySensor"),
-	SWITCH("Switch");
+	SWITCH("Switch"),
+	THERMOSTAT("Thermostat");
 
 	private String value;
 	

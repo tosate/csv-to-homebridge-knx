@@ -24,6 +24,7 @@ import de.devtom.java.homekit.OutletService;
 import de.devtom.java.homekit.ServiceFactory;
 import de.devtom.java.homekit.ServiceType;
 import de.devtom.java.homekit.SwitchService;
+import de.devtom.java.homekit.ThermostatService;
 import de.devtom.java.homekit.WindowCoveringService;
 
 public class KnxConfiguration {	
@@ -79,6 +80,12 @@ public class KnxConfiguration {
 				SwitchService switchService = ServiceFactory.getInstance().getNewSwitchService(record);
 				
 				device.getServices().add(switchService);
+			}
+			
+			if(record.getServiceType().equals(ServiceType.THERMOSTAT.getValue())) {
+				ThermostatService thermostatService = ServiceFactory.getInstance().getNewThermostatService(record);
+				
+				device.getServices().add(thermostatService);
 			}
 		}
 	}
