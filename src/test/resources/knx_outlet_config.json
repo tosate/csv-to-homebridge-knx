@@ -14,14 +14,9 @@
                "Characteristics":[
                   {
                      "Type":"On",
-                     "Set":[
-                        "1/2/3"
-                     ],
+                     "Set":[ "1/2/3" ],
+                     "Listen":[ "1/4/3" ],
                      "DPT":"DPT1"
-                  }, {
-                  	"Type": "OutletInUse",
-                  	"Listen":[ "1/4/3" ],
-                  	"DPT" : "DPT1"
                   }
                ]
             }
