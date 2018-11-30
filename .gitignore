@@ -15,3 +15,5 @@
 log/
 target/
 
+
+knx_config\.json
