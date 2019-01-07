@@ -99,4 +99,14 @@ public class ServiceFactory {
 		
 		return thermostatService;
 	}
+
+	public SmokeSensorService getNewSmokeSensorService(KnxCsvRecord record) throws Exception {
+		checkForExistingService(record.getServiceName());
+		
+		SmokeSensorService smokeSensorService = new SmokeSensorService(record);
+		
+		servicesMap.put(smokeSensorService.getServiceName(), smokeSensorService);
+		
+		return smokeSensorService;
+	}
 }

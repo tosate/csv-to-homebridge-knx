@@ -23,6 +23,7 @@ import de.devtom.java.homekit.OccupancySensorService;
 import de.devtom.java.homekit.OutletService;
 import de.devtom.java.homekit.ServiceFactory;
 import de.devtom.java.homekit.ServiceType;
+import de.devtom.java.homekit.SmokeSensorService;
 import de.devtom.java.homekit.SwitchService;
 import de.devtom.java.homekit.ThermostatService;
 import de.devtom.java.homekit.WindowCoveringService;
@@ -86,6 +87,12 @@ public class KnxConfiguration {
 				ThermostatService thermostatService = ServiceFactory.getInstance().getNewThermostatService(record);
 				
 				device.getServices().add(thermostatService);
+			}
+			
+			if(record.getServiceType().equals(ServiceType.SMOKESENSOR.getValue())) {
+				SmokeSensorService smokeSensorService = ServiceFactory.getInstance().getNewSmokeSensorService(record);
+				
+				device.getServices().add(smokeSensorService);
 			}
 		}
 	}

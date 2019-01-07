@@ -17,3 +17,5 @@ target/
 
 
 knx_config\.json
+
+knxd-config-input2\.csv

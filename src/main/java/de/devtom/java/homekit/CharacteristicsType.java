@@ -12,6 +12,7 @@ public enum CharacteristicsType {
 	TARGETHORIZONTALTILTANGLE("TargetHorizontalTiltAngle"),
 	CURRENTHORIZONTALTILTANGLE("CurrentHorizontalTiltAngle"),
 	OCCUPANCYDETECTED("OccupancyDetected"),
+	SMOKEDETECTED("SmokeDetected"),
 	STATUSACTIVE("StatusActive"),
 	OUTLETINUSE("OutletInUse"),
 	CURRENTHEATINGCOOLINGSTATE("CurrentHeatingCoolingState"),
