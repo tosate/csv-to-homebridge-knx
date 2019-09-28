@@ -4,7 +4,7 @@
 
 	<groupId>de.devtom.app</groupId>
 	<artifactId>knx-configuration-generator</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>knx-configuration-generator</name>
