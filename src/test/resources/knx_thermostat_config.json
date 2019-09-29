@@ -5,12 +5,12 @@
 	"AllowKillHomebridge": false,
 	"Devices": [
 		{
-			"DeviceName": "Office",
+			"DeviceName": "Office Thermostat",
 			"Services": [
 				{
 					"@type": "Thermostat",
 					"ServiceType": "Thermostat",
-					"ServiceName": "Office Thermostat",
+					"ServiceName": "Thermostat",
 					"Characteristics": [
 						{
 							"Type": "CurrentHeatingCoolingState",

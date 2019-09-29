@@ -5,12 +5,12 @@
    "AllowKillHomebridge":false,
    "Devices":[
       {
-         "DeviceName":"Kitchen",
+         "DeviceName":"Kitchen Counter Right-side Outlets",
          "Services":[
             {
                "@type":"Outlet",
                "ServiceType":"Outlet",
-               "ServiceName":"Kitchen Counter Right-side Outlets",
+               "ServiceName":"Steckdose",
                "Characteristics":[
                   {
                      "Type":"On",

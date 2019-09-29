@@ -4,13 +4,13 @@
   "AllowWebserver" : true,
   "AllowKillHomebridge" : false,
   "Devices" : [ {
-    "DeviceName": "Schranke",
+    "DeviceName": "Garagentor",
     "Services": [
         {
         	"@type" : "GarageDoorOpener",
             "ServiceType": "GarageDoorOpener",
             "Handler": "GarageDoorOpenerAdvanced",
-            "ServiceName": "Schranke",
+            "ServiceName": "Garagentoröffner",
             "Characteristics": [
                 {
                     "Type": "CurrentDoorState"

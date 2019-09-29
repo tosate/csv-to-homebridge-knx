@@ -9,8 +9,8 @@ public class OccupancySensorService extends AbstractService {
 		this.serviceType = ServiceType.OCCUPANCYSENSOR;
 	}
 	
-	public OccupancySensorService(KnxCsvRecord record) {
-		super(record);
+	public OccupancySensorService(String serviceName, KnxCsvRecord record) {
+		super(serviceName, record);
 		this.serviceType = ServiceType.OCCUPANCYSENSOR;
 	}
 	

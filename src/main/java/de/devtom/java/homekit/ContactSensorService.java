@@ -3,8 +3,8 @@ package de.devtom.java.homekit;
 import de.devtom.java.homebridge.knxd.KnxCsvRecord;
 
 public class ContactSensorService extends AbstractService {
-	public ContactSensorService(KnxCsvRecord record) {
-		super(record);
+	public ContactSensorService(String serviceName, KnxCsvRecord record) {
+		super(serviceName, record);
 		this.serviceType = ServiceType.CONTACTSENSOR;
 	}
 	

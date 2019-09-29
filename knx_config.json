@@ -4,24 +4,41 @@
   "AllowWebserver" : true,
   "AllowKillHomebridge" : false,
   "Devices" : [ {
-    "DeviceName" : "Office",
-    "Services" : [ ]
-  }, {
-    "DeviceName" : "Flur",
+    "DeviceName" : "Jalousie Wohnzimmer",
     "Services" : [ {
-      "@type" : "OccupancySensor",
-      "ServiceType" : "OccupancySensor",
-      "ServiceName" : "Präsenzmelder Flur",
+      "@type" : "WindowCovering",
+      "ServiceType" : "WindowCovering",
+      "ServiceName" : "WindowCovering_002",
       "Characteristics" : [ {
-        "Type" : "OccupancyDetected",
-        "Listen" : [ "6/4/1" ],
-        "DPT" : "DPT1"
+        "Type" : "TargetPosition",
+        "Set" : [ "2/4/1" ],
+        "Listen" : [ "2/4/1" ],
+        "DPT" : "DPT5"
+      }, {
+        "Type" : "CurrentPosition",
+        "Listen" : [ "2/3/1" ],
+        "DPT" : "DPT5"
+      }, {
+        "Type" : "PositionState"
+      }, {
+        "Type" : "TargetHorizontalTiltAngle",
+        "Set" : [ "2/6/1" ],
+        "Listen" : [ "2/6/1" ],
+        "DPT" : "DPT5"
+      }, {
+        "Type" : "CurrentHorizontalTiltAngle",
+        "Listen" : [ "2/5/1" ],
+        "DPT" : "DPT5"
       } ],
+      "Handler" : "HagerWindowCoveringTilt",
       "LocalConstants" : { }
-    }, {
+    } ]
+  }, {
+    "DeviceName" : "Hall Switch",
+    "Services" : [ {
       "@type" : "Switch",
       "ServiceType" : "Switch",
-      "ServiceName" : "Schalter FLur",
+      "ServiceName" : "Switch_001",
       "Characteristics" : [ {
         "Type" : "On",
         "Set" : [ "6/3/1" ],
@@ -29,23 +46,56 @@
         "DPT" : "DPT1"
       } ],
       "LocalConstants" : { }
-    }, {
-      "@type" : "SmokeSensorService",
-      "ServiceType" : "SmokeSensor",
-      "ServiceName" : "Raumelder",
+    } ]
+  }, {
+    "DeviceName" : "Office Thermostat",
+    "Services" : [ ]
+  }, {
+    "DeviceName" : "Hall Sensor",
+    "Services" : [ {
+      "@type" : "OccupancySensor",
+      "ServiceType" : "OccupancySensor",
+      "ServiceName" : "OccopancySensor_001",
       "Characteristics" : [ {
-        "Type" : "SmokeDetected",
-        "Listen" : [ "5/1/1" ],
+        "Type" : "OccupancyDetected",
+        "Listen" : [ "6/4/1" ],
         "DPT" : "DPT1"
       } ],
       "LocalConstants" : { }
     } ]
   }, {
-    "DeviceName" : "Schlafzimmer",
+    "DeviceName" : "Kitchen Counter Right-side Outlets",
+    "Services" : [ {
+      "@type" : "Outlet",
+      "ServiceType" : "Outlet",
+      "ServiceName" : "Outlet_001",
+      "Characteristics" : [ {
+        "Type" : "On",
+        "Set" : [ "1/2/3" ],
+        "Listen" : [ "1/4/3" ],
+        "DPT" : "DPT1"
+      } ],
+      "LocalConstants" : { }
+    } ]
+  }, {
+    "DeviceName" : "Flur",
+    "Services" : [ {
+      "@type" : "SmokeSensorService",
+      "ServiceType" : "SmokeSensor",
+      "ServiceName" : "SmokeSensor_001",
+      "Characteristics" : [ {
+        "Type" : "SmokeDetected",
+        "Listen" : [ "Raumelder" ],
+        "DPT" : "DPT1"
+      } ],
+      "LocalConstants" : { }
+    } ]
+  }, {
+    "DeviceName" : "Rollade Schlafzimmer rechts",
     "Services" : [ {
       "@type" : "WindowCovering",
       "ServiceType" : "WindowCovering",
-      "ServiceName" : "Rollade Schlafzimmer rechts",
+      "ServiceName" : "WindowCovering_001",
       "Characteristics" : [ {
         "Type" : "TargetPosition",
         "Set" : [ "2/4/1" ],
@@ -62,11 +112,11 @@
       "LocalConstants" : { }
     } ]
   }, {
-    "DeviceName" : "Schranke",
+    "DeviceName" : "Garagentor",
     "Services" : [ {
       "@type" : "GarageDoorOpener",
       "ServiceType" : "GarageDoorOpener",
-      "ServiceName" : "Schranke",
+      "ServiceName" : "GarageDoorOpener_001",
       "Characteristics" : [ {
         "Type" : "CurrentDoorState)"
       }, {
@@ -100,11 +150,25 @@
       }
     } ]
   }, {
-    "DeviceName" : "Wohnzimmer",
+    "DeviceName" : "Licht Garage OG",
     "Services" : [ {
       "@type" : "Lightbulb",
       "ServiceType" : "Lightbulb",
-      "ServiceName" : "Licht Wohnzimmer",
+      "ServiceName" : "Lightbulb_001",
+      "Characteristics" : [ {
+        "Type" : "On",
+        "Set" : [ "1/1/1" ],
+        "Listen" : [ "1/4/1" ],
+        "DPT" : "DPT1"
+      } ],
+      "LocalConstants" : { }
+    } ]
+  }, {
+    "DeviceName" : "Dimmbares Licht Wohnzimmer",
+    "Services" : [ {
+      "@type" : "Lightbulb",
+      "ServiceType" : "Lightbulb",
+      "ServiceName" : "Lightbulb_002",
       "Characteristics" : [ {
         "Type" : "On",
         "Set" : [ "1/1/1" ],
@@ -116,54 +180,16 @@
         "Listen" : [ "1/5/1" ]
       } ],
       "LocalConstants" : { }
-    }, {
-      "@type" : "WindowCovering",
-      "ServiceType" : "WindowCovering",
-      "ServiceName" : "Jalousie Wohnzimmer",
-      "Characteristics" : [ {
-        "Type" : "TargetPosition",
-        "Set" : [ "2/4/1" ],
-        "Listen" : [ "2/4/1" ],
-        "DPT" : "DPT5"
-      }, {
-        "Type" : "CurrentPosition",
-        "Listen" : [ "2/3/1" ],
-        "DPT" : "DPT5"
-      }, {
-        "Type" : "PositionState"
-      }, {
-        "Type" : "TargetHorizontalTiltAngle",
-        "Set" : [ "2/6/1" ],
-        "Listen" : [ "2/6/1" ],
-        "DPT" : "DPT5"
-      }, {
-        "Type" : "CurrentHorizontalTiltAngle",
-        "Listen" : [ "2/5/1" ],
-        "DPT" : "DPT5"
-      } ],
-      "Handler" : "HagerWindowCoveringTilt",
-      "LocalConstants" : { }
     } ]
   }, {
-    "DeviceName" : "Küche",
+    "DeviceName" : "Küchenfensterkontakt",
     "Services" : [ {
       "@type" : "ContactSensor",
       "ServiceType" : "ContactSensor",
-      "ServiceName" : "Fenster",
+      "ServiceName" : "ContactSensor_001",
       "Characteristics" : [ {
         "Type" : "ContactSensorState",
         "Listen" : [ "3/5/1" ],
-        "DPT" : "DPT1"
-      } ],
-      "LocalConstants" : { }
-    }, {
-      "@type" : "Outlet",
-      "ServiceType" : "Outlet",
-      "ServiceName" : "Steckdose",
-      "Characteristics" : [ {
-        "Type" : "On",
-        "Set" : [ "1/2/3" ],
-        "Listen" : [ "1/4/3" ],
         "DPT" : "DPT1"
       } ],
       "LocalConstants" : { }

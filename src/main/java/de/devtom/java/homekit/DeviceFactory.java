@@ -8,6 +8,7 @@ import de.devtom.java.homebridge.knxd.KnxConfiguration;
 public class DeviceFactory {
 	private static DeviceFactory instance;
 	private Map<String, Device> devicesMap;
+	private int deviceCount = 0;
 
 	public static DeviceFactory getInstance() {
 		if(instance == null) {
@@ -28,6 +29,7 @@ public class DeviceFactory {
 			Device device = new Device(deviceName);
 			devicesMap.put(deviceName, device);
 			config.getDevicesMap().put(deviceName, device);
+			this.deviceCount++;
 			
 			return device;
 		}
@@ -35,5 +37,9 @@ public class DeviceFactory {
 	
 	public void clearMap() {
 		this.devicesMap.clear();
+	}
+
+	public int getDeviceCount() {
+		return deviceCount;
 	}
 }
