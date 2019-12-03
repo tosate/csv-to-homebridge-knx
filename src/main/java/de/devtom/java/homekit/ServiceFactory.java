@@ -17,7 +17,7 @@ public class ServiceFactory {
 	private int occupancySensorCount = 0;
 	private int smokeSensorCount = 0;
 	private int switchSensorCount = 0;
-	private int thermostaCount = 0;
+	private int thermostatCount = 0;
 	private int windowCoveringCount = 0;
 	
 	private ServiceFactory() {
@@ -33,7 +33,9 @@ public class ServiceFactory {
 	}
 	
 	public LightbulbService getNewLightbulbService(KnxCsvRecord record) throws Exception {
-		String serviceName = String.format("Lightbulb_%03d", ++this.lightbulbCount);
+		++this.lightbulbCount;
+//		String serviceName = String.format("Lightbulb_%03d", this.lightbulbCount);
+		String serviceName = record.getDeviceName();
 		checkForExistingService(serviceName);
 		
 		LightbulbService lightbulbService = new LightbulbService(serviceName, record);
@@ -43,7 +45,9 @@ public class ServiceFactory {
 	}
 
 	public WindowCoveringService getNewWindowCoveringService(KnxCsvRecord record) throws Exception {
-		String serviceName = String.format("WindowCovering_%03d", ++this.windowCoveringCount);
+		++this.windowCoveringCount;
+//		String serviceName = String.format("WindowCovering_%03d", this.windowCoveringCount);
+		String serviceName = record.getDeviceName();
 		checkForExistingService(serviceName);
 		
 		WindowCoveringService windowCoveringService = new WindowCoveringService(serviceName, record);
@@ -53,7 +57,9 @@ public class ServiceFactory {
 	}
 
 	public GarageDoorOpenerService getNewGarageDoorOpenerService(KnxCsvRecord record) throws Exception {
-		String serviceName = String.format("GarageDoorOpener_%03d", ++this.garageDoorOpenerCount);
+		++this.garageDoorOpenerCount;
+//		String serviceName = String.format("GarageDoorOpener_%03d", this.garageDoorOpenerCount);
+		String serviceName = record.getDeviceName();
 		checkForExistingService(serviceName);
 		
 		GarageDoorOpenerService garageDoorOpenerService = new GarageDoorOpenerService(serviceName, record);
@@ -71,7 +77,9 @@ public class ServiceFactory {
 	}
 
 	public OutletService getNewOutletService(KnxCsvRecord record) throws Exception {
-		String serviceName = String.format("Outlet_%03d", ++this.outletCount);
+		++this.outletCount;
+//		String serviceName = String.format("Outlet_%03d", this.outletCount);
+		String serviceName = record.getDeviceName();
 		checkForExistingService(serviceName);
 		
 		OutletService outletService = new OutletService(serviceName, record);
@@ -81,7 +89,9 @@ public class ServiceFactory {
 	}
 
 	public ContactSensorService getNewContactSensorService(KnxCsvRecord record) throws Exception {
-		String serviceName = String.format("ContactSensor_%03d",  ++this.contactSensorCount);
+		++this.contactSensorCount;
+//		String serviceName = String.format("ContactSensor_%03d",  this.contactSensorCount);
+		String serviceName = record.getDeviceName();
 		checkForExistingService(serviceName);
 		
 		ContactSensorService contactSensorService = new ContactSensorService(serviceName, record);
@@ -91,7 +101,9 @@ public class ServiceFactory {
 	}
 
 	public OccupancySensorService getNewOccupancySensorService(KnxCsvRecord record) throws Exception {
-		String serviceName = String.format("OccopancySensor_%03d", ++this.occupancySensorCount);
+		++this.occupancySensorCount;
+//		String serviceName = String.format("OccopancySensor_%03d", this.occupancySensorCount);
+		String serviceName = record.getDeviceName();
 		checkForExistingService(serviceName);
 		
 		OccupancySensorService occupancySensorService = new OccupancySensorService(serviceName, record);
@@ -101,7 +113,9 @@ public class ServiceFactory {
 	}
 
 	public SwitchService getNewSwitchService(KnxCsvRecord record) throws Exception {
-		String serviceName = String.format("Switch_%03d", ++this.switchSensorCount);
+		++this.switchSensorCount;
+//		String serviceName = String.format("Switch_%03d", this.switchSensorCount);
+		String serviceName = record.getDeviceName();
 		checkForExistingService(serviceName);
 		
 		SwitchService switchService = new SwitchService(serviceName, record);
@@ -111,7 +125,9 @@ public class ServiceFactory {
 	}
 
 	public ThermostatService getNewThermostatService(KnxCsvRecord record) throws Exception {
-		String serviceName = String.format("Thermostat_%03d", ++this.thermostaCount);
+		++this.thermostatCount;
+//		String serviceName = String.format("Thermostat_%03d", this.thermostatCount);
+		String serviceName = record.getDeviceName();
 		checkForExistingService(serviceName);
 		
 		ThermostatService thermostatService = new ThermostatService(serviceName, record);
@@ -122,7 +138,9 @@ public class ServiceFactory {
 	}
 
 	public SmokeSensorService getNewSmokeSensorService(KnxCsvRecord record) throws Exception {
-		String serviceName = String.format("SmokeSensor_%03d", ++this.smokeSensorCount);
+		++this.smokeSensorCount;
+//		String serviceName = String.format("SmokeSensor_%03d", this.smokeSensorCount);
+		String serviceName = record.getDeviceName();
 		checkForExistingService(serviceName);
 		
 		SmokeSensorService smokeSensorService = new SmokeSensorService(serviceName, record);
@@ -134,5 +152,41 @@ public class ServiceFactory {
 
 	public int getServicesCount() {
 		return servicesCount;
+	}
+
+	public int getContactSensorCount() {
+		return contactSensorCount;
+	}
+
+	public int getGarageDoorOpenerCount() {
+		return garageDoorOpenerCount;
+	}
+
+	public int getLightbulbCount() {
+		return lightbulbCount;
+	}
+
+	public int getOutletCount() {
+		return outletCount;
+	}
+
+	public int getOccupancySensorCount() {
+		return occupancySensorCount;
+	}
+
+	public int getSmokeSensorCount() {
+		return smokeSensorCount;
+	}
+
+	public int getSwitchSensorCount() {
+		return switchSensorCount;
+	}
+
+	public int getWindowCoveringCount() {
+		return windowCoveringCount;
+	}
+
+	public int getThermostatCount() {
+		return thermostatCount;
 	}
 }
