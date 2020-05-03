@@ -1,14 +1,16 @@
 {
+  "knxd" : true,
   "knxd_ip" : "127.0.0.1",
   "knxd_port" : 6720,
   "AllowWebserver" : true,
+  "WebserverPort" : 18082,
   "AllowKillHomebridge" : false,
   "Devices" : [ {
     "DeviceName" : "Jalousie Wohnzimmer",
     "Services" : [ {
       "@type" : "WindowCovering",
       "ServiceType" : "WindowCovering",
-      "ServiceName" : "WindowCovering_002",
+      "ServiceName" : "Jalousie Wohnzimmer",
       "Characteristics" : [ {
         "Type" : "TargetPosition",
         "Set" : [ "2/4/1" ],
@@ -38,7 +40,7 @@
     "Services" : [ {
       "@type" : "Switch",
       "ServiceType" : "Switch",
-      "ServiceName" : "Switch_001",
+      "ServiceName" : "Hall Switch",
       "Characteristics" : [ {
         "Type" : "On",
         "Set" : [ "6/3/1" ],
@@ -55,7 +57,7 @@
     "Services" : [ {
       "@type" : "OccupancySensor",
       "ServiceType" : "OccupancySensor",
-      "ServiceName" : "OccopancySensor_001",
+      "ServiceName" : "Hall Sensor",
       "Characteristics" : [ {
         "Type" : "OccupancyDetected",
         "Listen" : [ "6/4/1" ],
@@ -68,7 +70,7 @@
     "Services" : [ {
       "@type" : "Outlet",
       "ServiceType" : "Outlet",
-      "ServiceName" : "Outlet_001",
+      "ServiceName" : "Kitchen Counter Right-side Outlets",
       "Characteristics" : [ {
         "Type" : "On",
         "Set" : [ "1/2/3" ],
@@ -82,7 +84,7 @@
     "Services" : [ {
       "@type" : "SmokeSensorService",
       "ServiceType" : "SmokeSensor",
-      "ServiceName" : "SmokeSensor_001",
+      "ServiceName" : "Flur",
       "Characteristics" : [ {
         "Type" : "SmokeDetected",
         "Listen" : [ "Raumelder" ],
@@ -95,7 +97,7 @@
     "Services" : [ {
       "@type" : "WindowCovering",
       "ServiceType" : "WindowCovering",
-      "ServiceName" : "WindowCovering_001",
+      "ServiceName" : "Rollade Schlafzimmer rechts",
       "Characteristics" : [ {
         "Type" : "TargetPosition",
         "Set" : [ "2/4/1" ],
@@ -116,7 +118,7 @@
     "Services" : [ {
       "@type" : "GarageDoorOpener",
       "ServiceType" : "GarageDoorOpener",
-      "ServiceName" : "GarageDoorOpener_001",
+      "ServiceName" : "Garagentor",
       "Characteristics" : [ {
         "Type" : "CurrentDoorState)"
       }, {
@@ -154,7 +156,7 @@
     "Services" : [ {
       "@type" : "Lightbulb",
       "ServiceType" : "Lightbulb",
-      "ServiceName" : "Lightbulb_001",
+      "ServiceName" : "Licht Garage OG",
       "Characteristics" : [ {
         "Type" : "On",
         "Set" : [ "1/1/1" ],
@@ -168,7 +170,7 @@
     "Services" : [ {
       "@type" : "Lightbulb",
       "ServiceType" : "Lightbulb",
-      "ServiceName" : "Lightbulb_002",
+      "ServiceName" : "Dimmbares Licht Wohnzimmer",
       "Characteristics" : [ {
         "Type" : "On",
         "Set" : [ "1/1/1" ],
@@ -186,7 +188,7 @@
     "Services" : [ {
       "@type" : "ContactSensor",
       "ServiceType" : "ContactSensor",
-      "ServiceName" : "ContactSensor_001",
+      "ServiceName" : "Küchenfensterkontakt",
       "Characteristics" : [ {
         "Type" : "ContactSensorState",
         "Listen" : [ "3/5/1" ],
