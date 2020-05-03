@@ -9,8 +9,8 @@ public class SmokeSensorService extends AbstractService {
 		this.serviceType = ServiceType.SMOKESENSOR;
 	}
 	
-	public SmokeSensorService(KnxCsvRecord record) {
-		super(record);
+	public SmokeSensorService(String serviceName, KnxCsvRecord record) {
+		super(serviceName, record);
 		this.serviceType = ServiceType.SMOKESENSOR;
 	}
 

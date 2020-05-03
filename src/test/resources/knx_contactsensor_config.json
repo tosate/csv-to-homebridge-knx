@@ -4,11 +4,11 @@
   "AllowWebserver" : true,
   "AllowKillHomebridge" : false,
   "Devices" : [ {
-    "DeviceName" : "Küche",
+    "DeviceName" : "Küchenfensterkontakt",
     "Services" : [ {
       "@type" : "ContactSensor",
       "ServiceType" : "ContactSensor",
-      "ServiceName" : "Fenster",
+      "ServiceName" : "Kontaktsensor",
       "Characteristics" : [ {
         "Type" : "ContactSensorState",
         "Listen" : [ "3/5/1" ],

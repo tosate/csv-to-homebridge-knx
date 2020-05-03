@@ -1,27 +1,46 @@
 {
+  "knxd" : true,
   "knxd_ip" : "127.0.0.1",
   "knxd_port" : 6720,
   "AllowWebserver" : true,
+  "WebserverPort" : 18082,
   "AllowKillHomebridge" : false,
   "Devices" : [ {
-    "DeviceName" : "Office",
-    "Services" : [ ]
-  }, {
-    "DeviceName" : "Flur",
+    "DeviceName" : "Jalousie Wohnzimmer",
     "Services" : [ {
-      "@type" : "OccupancySensor",
-      "ServiceType" : "OccupancySensor",
-      "ServiceName" : "Präsenzmelder Flur",
+      "@type" : "WindowCovering",
+      "ServiceType" : "WindowCovering",
+      "ServiceName" : "Jalousie Wohnzimmer",
       "Characteristics" : [ {
-        "Type" : "OccupancyDetected",
-        "Listen" : [ "6/4/1" ],
-        "DPT" : "DPT1"
+        "Type" : "TargetPosition",
+        "Set" : [ "2/4/1" ],
+        "Listen" : [ "2/4/1" ],
+        "DPT" : "DPT5"
+      }, {
+        "Type" : "CurrentPosition",
+        "Listen" : [ "2/3/1" ],
+        "DPT" : "DPT5"
+      }, {
+        "Type" : "PositionState"
+      }, {
+        "Type" : "TargetHorizontalTiltAngle",
+        "Set" : [ "2/6/1" ],
+        "Listen" : [ "2/6/1" ],
+        "DPT" : "DPT5"
+      }, {
+        "Type" : "CurrentHorizontalTiltAngle",
+        "Listen" : [ "2/5/1" ],
+        "DPT" : "DPT5"
       } ],
+      "Handler" : "HagerWindowCoveringTilt",
       "LocalConstants" : { }
-    }, {
+    } ]
+  }, {
+    "DeviceName" : "Hall Switch",
+    "Services" : [ {
       "@type" : "Switch",
       "ServiceType" : "Switch",
-      "ServiceName" : "Schalter FLur",
+      "ServiceName" : "Hall Switch",
       "Characteristics" : [ {
         "Type" : "On",
         "Set" : [ "6/3/1" ],
@@ -29,19 +48,52 @@
         "DPT" : "DPT1"
       } ],
       "LocalConstants" : { }
-    }, {
-      "@type" : "SmokeSensorService",
-      "ServiceType" : "SmokeSensor",
-      "ServiceName" : "Raumelder",
+    } ]
+  }, {
+    "DeviceName" : "Office Thermostat",
+    "Services" : [ ]
+  }, {
+    "DeviceName" : "Hall Sensor",
+    "Services" : [ {
+      "@type" : "OccupancySensor",
+      "ServiceType" : "OccupancySensor",
+      "ServiceName" : "Hall Sensor",
       "Characteristics" : [ {
-        "Type" : "SmokeDetected",
-        "Listen" : [ "5/1/1" ],
+        "Type" : "OccupancyDetected",
+        "Listen" : [ "6/4/1" ],
         "DPT" : "DPT1"
       } ],
       "LocalConstants" : { }
     } ]
   }, {
-    "DeviceName" : "Schlafzimmer",
+    "DeviceName" : "Kitchen Counter Right-side Outlets",
+    "Services" : [ {
+      "@type" : "Outlet",
+      "ServiceType" : "Outlet",
+      "ServiceName" : "Kitchen Counter Right-side Outlets",
+      "Characteristics" : [ {
+        "Type" : "On",
+        "Set" : [ "1/2/3" ],
+        "Listen" : [ "1/4/3" ],
+        "DPT" : "DPT1"
+      } ],
+      "LocalConstants" : { }
+    } ]
+  }, {
+    "DeviceName" : "Flur",
+    "Services" : [ {
+      "@type" : "SmokeSensorService",
+      "ServiceType" : "SmokeSensor",
+      "ServiceName" : "Flur",
+      "Characteristics" : [ {
+        "Type" : "SmokeDetected",
+        "Listen" : [ "Raumelder" ],
+        "DPT" : "DPT1"
+      } ],
+      "LocalConstants" : { }
+    } ]
+  }, {
+    "DeviceName" : "Rollade Schlafzimmer rechts",
     "Services" : [ {
       "@type" : "WindowCovering",
       "ServiceType" : "WindowCovering",
@@ -62,11 +114,11 @@
       "LocalConstants" : { }
     } ]
   }, {
-    "DeviceName" : "Schranke",
+    "DeviceName" : "Garagentor",
     "Services" : [ {
       "@type" : "GarageDoorOpener",
       "ServiceType" : "GarageDoorOpener",
-      "ServiceName" : "Schranke",
+      "ServiceName" : "Garagentor",
       "Characteristics" : [ {
         "Type" : "CurrentDoorState)"
       }, {
@@ -100,11 +152,25 @@
       }
     } ]
   }, {
-    "DeviceName" : "Wohnzimmer",
+    "DeviceName" : "Licht Garage OG",
     "Services" : [ {
       "@type" : "Lightbulb",
       "ServiceType" : "Lightbulb",
-      "ServiceName" : "Licht Wohnzimmer",
+      "ServiceName" : "Licht Garage OG",
+      "Characteristics" : [ {
+        "Type" : "On",
+        "Set" : [ "1/1/1" ],
+        "Listen" : [ "1/4/1" ],
+        "DPT" : "DPT1"
+      } ],
+      "LocalConstants" : { }
+    } ]
+  }, {
+    "DeviceName" : "Dimmbares Licht Wohnzimmer",
+    "Services" : [ {
+      "@type" : "Lightbulb",
+      "ServiceType" : "Lightbulb",
+      "ServiceName" : "Dimmbares Licht Wohnzimmer",
       "Characteristics" : [ {
         "Type" : "On",
         "Set" : [ "1/1/1" ],
@@ -116,54 +182,16 @@
         "Listen" : [ "1/5/1" ]
       } ],
       "LocalConstants" : { }
-    }, {
-      "@type" : "WindowCovering",
-      "ServiceType" : "WindowCovering",
-      "ServiceName" : "Jalousie Wohnzimmer",
-      "Characteristics" : [ {
-        "Type" : "TargetPosition",
-        "Set" : [ "2/4/1" ],
-        "Listen" : [ "2/4/1" ],
-        "DPT" : "DPT5"
-      }, {
-        "Type" : "CurrentPosition",
-        "Listen" : [ "2/3/1" ],
-        "DPT" : "DPT5"
-      }, {
-        "Type" : "PositionState"
-      }, {
-        "Type" : "TargetHorizontalTiltAngle",
-        "Set" : [ "2/6/1" ],
-        "Listen" : [ "2/6/1" ],
-        "DPT" : "DPT5"
-      }, {
-        "Type" : "CurrentHorizontalTiltAngle",
-        "Listen" : [ "2/5/1" ],
-        "DPT" : "DPT5"
-      } ],
-      "Handler" : "HagerWindowCoveringTilt",
-      "LocalConstants" : { }
     } ]
   }, {
-    "DeviceName" : "Küche",
+    "DeviceName" : "Küchenfensterkontakt",
     "Services" : [ {
       "@type" : "ContactSensor",
       "ServiceType" : "ContactSensor",
-      "ServiceName" : "Fenster",
+      "ServiceName" : "Küchenfensterkontakt",
       "Characteristics" : [ {
         "Type" : "ContactSensorState",
         "Listen" : [ "3/5/1" ],
-        "DPT" : "DPT1"
-      } ],
-      "LocalConstants" : { }
-    }, {
-      "@type" : "Outlet",
-      "ServiceType" : "Outlet",
-      "ServiceName" : "Steckdose",
-      "Characteristics" : [ {
-        "Type" : "On",
-        "Set" : [ "1/2/3" ],
-        "Listen" : [ "1/4/3" ],
         "DPT" : "DPT1"
       } ],
       "LocalConstants" : { }

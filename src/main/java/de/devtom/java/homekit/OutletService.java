@@ -3,8 +3,8 @@ package de.devtom.java.homekit;
 import de.devtom.java.homebridge.knxd.KnxCsvRecord;
 
 public class OutletService extends AbstractService {
-	public OutletService(KnxCsvRecord record) {
-		super(record);
+	public OutletService(String serviceName, KnxCsvRecord record) {
+		super(serviceName, record);
 		this.serviceType = ServiceType.OUTLET;
 		
 	}

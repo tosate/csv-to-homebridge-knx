@@ -4,11 +4,11 @@
   "AllowWebserver" : true,
   "AllowKillHomebridge" : false,
   "Devices" : [ {
-    "DeviceName" : "Wohnzimmer",
+    "DeviceName" : "Licht Wohnzimmer",
     "Services" : [ {
       "@type" : "Lightbulb",
       "ServiceType" : "Lightbulb",
-      "ServiceName" : "Licht Wohnzimmer",
+      "ServiceName" : "Dimmbare Lampe",
       "Characteristics" : [ {
         "Type" : "On",
         "Set" : [ "1/1/1" ],

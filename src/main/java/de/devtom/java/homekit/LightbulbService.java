@@ -7,8 +7,8 @@ import de.devtom.java.homebridge.knxd.KnxCsvRecord;
 public class LightbulbService extends AbstractService {
 //	private static final String KNX_PLUGIN_HANDLER = "HagerDimmableLightbuld";
 	
-	public LightbulbService(KnxCsvRecord record) {
-		super(record);
+	public LightbulbService(String serviceName, KnxCsvRecord record) {
+		super(serviceName, record);
 		this.serviceType = ServiceType.LIGHTBULB;
 	}
 	

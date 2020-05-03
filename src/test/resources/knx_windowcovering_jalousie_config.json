@@ -4,12 +4,12 @@
   "AllowWebserver" : true,
   "AllowKillHomebridge" : false,
   "Devices" : [ {
-    "DeviceName" : "Wohnzimmer",
+    "DeviceName" : "Jalousie Wohnzimmer",
     "Services" : [ {
       "@type" : "WindowCovering",
       "ServiceType" : "WindowCovering",
       "Handler": "HagerWindowCoveringTilt",
-      "ServiceName" : "Jalousie Wohnzimmer",
+      "ServiceName" : "Jalousie",
       "Characteristics" : [ {
         "Type" : "TargetPosition",
         "Set" : [ "2/4/1" ],

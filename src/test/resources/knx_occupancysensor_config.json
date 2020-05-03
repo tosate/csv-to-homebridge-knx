@@ -5,12 +5,12 @@
    "AllowKillHomebridge":false,
    "Devices":[
       {
-         "DeviceName":"Hall",
+         "DeviceName":"Hall Sensor",
          "Services":[
             {
                "@type":"OccupancySensor",
                "ServiceType":"OccupancySensor",
-               "ServiceName":"Hall Sensor",
+               "ServiceName":"Bewegungsmelder",
                "Characteristics":[
                   {
                      "Type":"OccupancyDetected",

@@ -12,8 +12,8 @@ public class WindowCoveringService extends AbstractService {
 		this.serviceType = ServiceType.WINDOWCOVERING;
 	}
 
-	public WindowCoveringService(KnxCsvRecord record) {
-		super(record);
+	public WindowCoveringService(String serviceName, KnxCsvRecord record) {
+		super(serviceName, record);
 		this.serviceType = ServiceType.WINDOWCOVERING;
 		this.handler = KNX_PLUGIN_HANDLER;
 	}

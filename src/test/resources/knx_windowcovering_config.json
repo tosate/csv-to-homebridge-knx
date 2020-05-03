@@ -4,12 +4,12 @@
   "AllowWebserver" : true,
   "AllowKillHomebridge" : false,
   "Devices" : [ {
-    "DeviceName" : "Schlafzimmer",
+    "DeviceName" : "Rollade Schlafzimmer rechts",
     "Services" : [ {
       "@type" : "WindowCovering",
       "ServiceType" : "WindowCovering",
       "Handler": "HagerWindowCoveringTilt",
-      "ServiceName" : "Rollade Schlafzimmer rechts",
+      "ServiceName" : "Rollade",
       "Characteristics" : [ {
         "Type" : "TargetPosition",
         "Set" : [ "2/4/1" ],

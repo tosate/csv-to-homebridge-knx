@@ -8,8 +8,8 @@ public class SwitchService extends AbstractService {
 		this.serviceType = ServiceType.SWITCH;
 	}
 	
-	public SwitchService(KnxCsvRecord record) {
-		super(record);
+	public SwitchService(String serviceName, KnxCsvRecord record) {
+		super(serviceName, record);
 		this.serviceType = ServiceType.SWITCH;
 	}
 

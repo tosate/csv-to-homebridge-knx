@@ -8,8 +8,8 @@ public class ThermostatService extends AbstractService {
 		this.serviceType = ServiceType.THERMOSTAT;
 	}
 	
-	public ThermostatService(KnxCsvRecord record) {
-		super(record);
+	public ThermostatService(String serviceName, KnxCsvRecord record) {
+		super(serviceName, record);
 		this.serviceType = ServiceType.THERMOSTAT;
 	}
 

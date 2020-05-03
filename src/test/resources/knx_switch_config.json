@@ -5,12 +5,12 @@
    "AllowKillHomebridge":false,
    "Devices":[
       {
-         "DeviceName":"Hall",
+         "DeviceName":"Hall Switch",
          "Services":[
             {
                "@type":"Switch",
                "ServiceType":"Switch",
-               "ServiceName":"Switch",
+               "ServiceName":"Schalter",
                "Characteristics":[
                   {
                      "Type":"On",

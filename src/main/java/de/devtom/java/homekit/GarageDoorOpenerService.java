@@ -24,8 +24,8 @@ public class GarageDoorOpenerService extends AbstractService {
 		this.serviceType = ServiceType.GARAGEDOOROPENER;
 	}
 
-	public GarageDoorOpenerService(KnxCsvRecord record) {
-		super(record);
+	public GarageDoorOpenerService(String serviceName, KnxCsvRecord record) {
+		super(serviceName, record);
 		 this.serviceType = ServiceType.GARAGEDOOROPENER;
 		 this.handler = KNX_PLUGIN_HANDLER;
 	}

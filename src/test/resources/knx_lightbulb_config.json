@@ -4,11 +4,11 @@
   "AllowWebserver" : true,
   "AllowKillHomebridge" : false,
   "Devices" : [ {
-    "DeviceName" : "Garage OG",
+    "DeviceName" : "Licht Garage OG",
     "Services" : [ {
       "@type" : "Lightbulb",
       "ServiceType" : "Lightbulb",
-      "ServiceName" : "Licht Garage OG",
+      "ServiceName" : "Lampe",
       "Characteristics" : [ {
         "Type" : "On",
         "Set" : [ "1/1/1" ],

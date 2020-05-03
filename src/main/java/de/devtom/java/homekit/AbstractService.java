@@ -38,8 +38,8 @@ public abstract class AbstractService {
 	
 	public AbstractService() {}
 	
-	public AbstractService(KnxCsvRecord record) {
-		this.serviceName = record.getServiceName();
+	public AbstractService(String serviceName, KnxCsvRecord record) {
+		this.serviceName = serviceName;
 		this.initialize(record);
 	}
 

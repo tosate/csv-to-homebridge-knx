@@ -28,10 +28,12 @@ import de.devtom.java.homekit.SwitchService;
 import de.devtom.java.homekit.ThermostatService;
 import de.devtom.java.homekit.WindowCoveringService;
 
-public class KnxConfiguration {	
+public class KnxConfiguration {
+	private boolean useKnxd;
 	private String knxdIp;
 	private int knxdPort;
 	private boolean allowWebServer;
+	private int webServerPort;
 	private boolean allowKillHomebridge;
 	private Map<String, Device> devices;
 	
@@ -103,6 +105,11 @@ public class KnxConfiguration {
 		
 		mapper.writeValue(new File(outputFile), this);
 	}
+	
+	@JsonProperty("knxd")
+	public boolean isUseKnxd() {
+		return useKnxd;
+	}
 
 	@JsonProperty("knxd_ip")
 	public String getKnxdIp() {
@@ -141,6 +148,11 @@ public class KnxConfiguration {
 	public boolean isAllowWebServer() {
 		return allowWebServer;
 	}
+	
+	@JsonProperty("WebserverPort")
+	public int getWebServerPort() {
+		return webServerPort;
+	}
 
 	@JsonProperty("AllowWebserver")
 	public void setAllowWebServer(boolean allowWebServer) {
@@ -150,6 +162,14 @@ public class KnxConfiguration {
 	@JsonIgnore
 	public Map<String, Device> getDevicesMap() {
 		return this.devices;
+	}
+
+	public void setUseKnxd(boolean useKnxd) {
+		this.useKnxd = useKnxd;
+	}
+
+	public void setWebServerPort(int webServerPort) {
+		this.webServerPort = webServerPort;
 	}
 
 	@JsonProperty("Devices")
@@ -170,6 +190,9 @@ public class KnxConfiguration {
 			return false;
 		}
 		final KnxConfiguration other = (KnxConfiguration) obj;
+		if(this.useKnxd != other.useKnxd) {
+			return false;
+		}
 		if((this.knxdIp == null) ? (other.knxdIp != null) : !this.knxdIp.equals(other.knxdIp)) {
 			return false;
 		}
@@ -177,6 +200,9 @@ public class KnxConfiguration {
 			return false;
 		}
 		if(this.allowWebServer != other.allowWebServer) {
+			return false;
+		}
+		if(this.webServerPort != other.webServerPort) {
 			return false;
 		}
 		if(this.allowKillHomebridge != other.allowKillHomebridge) {
