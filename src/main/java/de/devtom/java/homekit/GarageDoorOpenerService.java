@@ -9,15 +9,15 @@ public class GarageDoorOpenerService extends AbstractService {
 	private static final String KEY_DOOR_CONTACT_PRESENT = "doorContactPresent";
 	private static final String VALUE_DOOR_CONTACT_PRESENT = "open";
 	private static final String KEY_STAIRCASE_FUNC = "staircaseFunc";
-	private static final Boolean VALUE_STAIRCASE_FUNC = new Boolean(false);
+	private static final Boolean VALUE_STAIRCASE_FUNC = Boolean.FALSE;
 	private static final String KEY_SEPARATE_PULSE_UPDOWN = "separatePulseUpDown";
-	private static final Boolean VALUE_SEPARATE_PULSE_UPDOWN = new Boolean(true);
+	private static final Boolean VALUE_SEPARATE_PULSE_UPDOWN = Boolean.TRUE;
 	private static final String KEY_SENSOR_ON = "sensorOn";
-	private static final Integer VALUE_SENSOR_ON = new Integer(1);
+	private static final Integer VALUE_SENSOR_ON = 1;
 	private static final String KEY_PULSE_LENGTH = "pulseLength";
-	private static final Integer VALUE_PULSE_LENGTH = new Integer(500);
+	private static final Integer VALUE_PULSE_LENGTH = 500;
 	private static final String KEY_DOOR_RUNTIME = "doorRunTime";
-	private static final Integer VALUE_DOOR_RUNTIME = new Integer(18500);
+	private static final Integer VALUE_DOOR_RUNTIME = 18500;
 	
 	public GarageDoorOpenerService() {
 		super();
